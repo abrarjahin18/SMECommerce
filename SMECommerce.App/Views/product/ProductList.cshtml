@@ -1,0 +1,58 @@
+﻿@{
+    //List<Category> categoryList = ViewData["CategoryList"] as List<Category>;
+    int serialNo = 0;
+}
+@model SMECommerce.App.Models.ProductModels.productShow
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product List</h3>
+        <div class="card-tools">
+            <a class="btn btn-primary" asp-action="ProductCreate">Create</a>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Name</th>
+                    <th>product Code</th>
+                    <th>price</th>
+                    <th>showing details</th>
+                    <th style="width: 40px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ItemList)
+                {
+                <tr>
+                    <td>@(++serialNo)</td>
+                    <td>@item.Name</td>
+                    <td>
+                        @item.ProductCode
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        
+                        <a asp-action="ProductDetails" asp-route-id="@item.Id" class="badge bg-success">Details</a>
+                    </td>
+                    <td>
+                        <a asp-action="ProductEdit" asp-route-id="@item.Id" class="badge bg-warning">Edit</a>
+                        <a asp-action="ProductDelete" asp-route-id="@item.Id" class="badge bg-danger">Delete</a>
+
+                    </td>
+                </tr>
+
+                }
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

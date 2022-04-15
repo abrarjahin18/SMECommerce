@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SMECommerc.Databases\SMECommerce.Databases.csproj" />
+    <ProjectReference Include="..\SMECommerce.Repositories.abstractions\SMECommerce.Repositories.abstractions.csproj" />
+    
+  </ItemGroup>
+
+</Project>
